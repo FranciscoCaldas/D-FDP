@@ -26,8 +26,8 @@ Choose from any combination of model and dataset
 ## Fast experiment - ettm1 dataset 192-forecasting
 #(example using Diffwave, you can choose which model)
 ```
-python3 train.py -c config/config_DiffWave_ettm1_FDM.json
-python3 inference.py -c config/config/config_DiffWave_ettm1_FDM.json
+python3 train_decomp.py -c config/config_DiffWave_solar_FDM.json
+python3 inference_decomp.py -c config/config/config_DiffWave_solar_FDM.json
 ```
 
 
