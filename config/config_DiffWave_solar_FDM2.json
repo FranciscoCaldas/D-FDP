@@ -1,0 +1,50 @@
+{
+  "diffusion_config": {
+    "T": 66,
+    "beta_0": 0.004,
+    "beta_T": 0.06
+  },
+  "wavenet_config": {
+    "in_channels": 1,
+    "out_channels": 1,
+    "num_res_layers": 1,
+    "res_channels": 12,
+    "skip_channels": 12,
+    "dilation_cycle": 12,
+    "diffusion_step_embed_dim_in": 12,
+    "diffusion_step_embed_dim_mid": 24,
+    "diffusion_step_embed_dim_out": 24
+  },
+  "train_config": {
+    "output_directory": "./results/solar/24",
+    "ckpt_iter": "max",
+    "iters_per_ckpt": 10000,
+    "iters_per_logging": 1000,
+    "n_iters": 110000,
+    "learning_rate": 0.0002,
+    "only_generate_missing": 1,
+    "max_components": 2,
+    "use_model": 0,
+    "masking": "forecast",
+    "missing_k": 168,
+    "fixed_components": 1,
+    "decomposition_method": "fft"
+  },
+  "trainset_config": {
+    "train_data_path": "./datasets/solar_energy/solar_train_scaled.npy",
+    "test_data_path": "./datasets/solar_energy/solar_test_scaled.npy",
+    "segment_length": 192,
+    "sampling_rate": 192,
+    "val_data_path": "./datasets/solar_energy/solar_test_scaled.npy",
+    "batch_size": 24,
+    "order": "remainder_last",
+    "loss": "mse"
+  },
+  "gen_config": {
+    "output_directory": "./results/solar/24",
+    "ckpt_path": "./results/solar/24",
+    "max_components_gen": 3,
+    "sampling_with_dk": 0,
+    "num_obs": 100
+  }
+}

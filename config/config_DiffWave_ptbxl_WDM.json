@@ -1,0 +1,50 @@
+{
+  "diffusion_config": {
+    "T": 66,
+    "beta_0": 0.002,
+    "beta_T": 0.08
+  },
+  "wavenet_config": {
+    "in_channels": 12,
+    "out_channels": 12,
+    "num_res_layers": 12,
+    "res_channels": 256,
+    "skip_channels": 256,
+    "dilation_cycle": 12,
+    "diffusion_step_embed_dim_in": 128,
+    "diffusion_step_embed_dim_mid": 512,
+    "diffusion_step_embed_dim_out": 512
+  },
+  "train_config": {
+    "output_directory": "./results/PTB-XL/800_Wavelet",
+    "ckpt_iter": "max",
+    "iters_per_ckpt": 10000,
+    "iters_per_logging": 1000,
+    "n_iters": 110000,
+    "learning_rate": 2e-05,
+    "only_generate_missing": 1,
+    "max_components": 2,
+    "use_model": 0,
+    "masking": "forecast",
+    "missing_k": 800,
+    "fixed_components": 1,
+    "decomposition_method": "wavelet"
+  },
+  "trainset_config": {
+    "train_data_path": "./datasets/PTB-XL/train_ptbxl_1000.npy",
+    "test_data_path": "./datasets/PTB-XL/test_ptbxl_1000.npy",
+    "segment_length": 1000,
+    "sampling_rate": 1000,
+    "val_data_path": "./datasets/PTB-XL/val_ptbxl_1000.npy",
+    "batch_size": 64,
+    "order": "remainder_last",
+    "loss": "mse"
+  },
+  "gen_config": {
+    "output_directory": "./results/PTB-XL/800_Wavelet",
+    "ckpt_path": "./results/PTB-XL/800_Wavelet",
+    "max_components_gen": 3,
+    "sampling_with_dk": 0,
+    "num_obs": 100
+  }
+}
