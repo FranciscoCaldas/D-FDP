@@ -1,5 +1,5 @@
 ![FFT-DM](example_diffusion_process.gif)
-
+# A Decomposable Forward Process in Diffusion Models for Time-Series Forecasting (D-FDP)
 
 ## Install the requiered libraries 
 ```
